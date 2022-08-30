@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
 
-const Buscador = () => {
+const Buscador = (Props) => {
  
 
   return (
@@ -9,7 +10,12 @@ const Buscador = () => {
   <div className="container-fluid bg-dark">
     <h3 className="navbar-brand text-white">Buscador de Colaboradores</h3>
     <form className="d-flex" role="search">
-      <input className="form-control mr-3" type="search" placeholder="Buscar un colaborador" aria-label="Search"/>
+      <input className="form-control mr-3" 
+      type="search" 
+      placeholder="Buscar un colaborador" 
+      aria-label="Search"
+      onChange={(e) => {Props.setBuscador(e.target.value)}}
+      />
     </form>
   </div>
 </div>

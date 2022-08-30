@@ -1,14 +1,16 @@
 
+import { useState } from 'react';
 import Buscador from './components/Buscador'
 import Inputs from './components/Inputs';
-import Listado from './components/Listado';
+
 
 function App() {
+  const [buscador, setBuscador] = useState('');
+ console.log(buscador)
   return (
     <div className='container'>
-      <Buscador />
-      <Inputs />
-      <Listado />
+      <Buscador setBuscador ={setBuscador}/>
+      <Inputs buscador ={buscador}/>
     </div>
 
   );
